@@ -73,7 +73,7 @@ export default function RoadMap() {
   ]
 
   return (
-    <div className='container mx-auto py-24'>
+    <div id='road-map' className='container mx-auto px-4 py-16 lg:py-24'>
       <div className='mb-6 text-center'>
         <TitleBadge title='Lộ trình phát triển' />
       </div>

@@ -14,7 +14,7 @@ const HeroSection = () => {
         <div className='absolute inset-0 bg-gradient-to-r from-green-900/80 to-transparent'></div>
       </div>
 
-      <div className='relative z-10 container mx-auto sm:px-6 lg:px-8'>
+      <div className='relative z-10 container mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='max-w-xl text-white md:max-w-2xl lg:max-w-3xl'>
           <h1 className='text-3xl leading-tight font-bold sm:text-4xl md:text-5xl lg:text-6xl'>
             <span className='text-[#3C93CF]'>Vinimex AI</span> – Tương Lai của Nông Nghiệp Thông Minh
@@ -22,7 +22,9 @@ const HeroSection = () => {
           <p className='mt-4 text-base opacity-90 sm:text-lg md:text-xl'>
             Cách mạng hóa nông nghiệp với công nghệ AI tiên tiến và tích hợp blockchain cho các phương pháp canh tác bền vững, hiệu quả và minh bạch.
           </p>
-          <Button className='mt-8 cursor-pointer !rounded-full bg-[#6A994E] px-6 py-4 text-base whitespace-nowrap text-white'>Liên hệ ngay</Button>
+          <Button className='mt-8 cursor-pointer !rounded-full bg-[#6A994E] px-6 py-4 text-base whitespace-nowrap text-white shadow-md transition-all duration-200 hover:scale-105 hover:bg-[#5A8B3E] hover:shadow-lg'>
+            Liên hệ ngay
+          </Button>
           <div className='mt-8 flex flex-wrap items-center gap-4'>
             <div className='flex -space-x-4 rtl:space-x-reverse'>
               <div className='relative z-30 h-10 w-10 overflow-hidden rounded-full border-2 border-white sm:h-12 sm:w-12'>

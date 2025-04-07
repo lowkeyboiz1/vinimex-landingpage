@@ -4,8 +4,8 @@ import TitleBadge from '@/components/TitleBadge'
 
 const AboutUs = () => {
   return (
-    <section className='flex min-h-dvh items-center justify-center bg-gray-50 py-12 md:py-16'>
-      <div className='container mx-auto'>
+    <section id='about-us' className='flex min-h-dvh items-center justify-center bg-gray-50 py-12 md:py-16'>
+      <div className='container mx-auto px-4'>
         <div className='mx-auto mb-10 px-4 text-center md:mb-16 md:px-20'>
           <TitleBadge title='Về chúng tôi' />
           <h2 className='mb-4 text-2xl font-bold md:mb-6 md:text-3xl lg:text-4xl'>Nền tảng AI nông nghiệp tiên phong tại Việt Nam</h2>

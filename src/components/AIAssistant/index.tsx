@@ -4,8 +4,8 @@ import TitleBadge from '../TitleBadge'
 
 export default function AIAssistant() {
   return (
-    <div className='flex min-h-dvh flex-col items-center justify-center px-4 py-16'>
-      <div className='container mx-auto'>
+    <div id='features' className='flex min-h-dvh flex-col items-center justify-center px-4 py-16'>
+      <div className='container mx-auto px-4'>
         {/* Feature Label */}
         <div className='mb-6 text-center'>
           <TitleBadge title='Tính năng' />
@@ -157,8 +157,8 @@ export default function AIAssistant() {
             </div>
 
             {/* Chat Input */}
-            <div className='border-t border-gray-200 bg-white p-4'>
-              <div className='flex items-center gap-2'>
+            <div className='border-t border-gray-200 bg-white p-2 lg:p-4'>
+              <div className='flex w-full flex-col-reverse items-center gap-2 lg:flex-row'>
                 <div className='flex gap-2'>
                   <button className='rounded-full p-2 text-gray-500 transition-colors hover:bg-gray-100'>
                     <Paperclip className='h-5 w-5' />
@@ -170,14 +170,16 @@ export default function AIAssistant() {
                     <Mic className='h-5 w-5' />
                   </button>
                 </div>
-                <input
-                  type='text'
-                  placeholder='Nhập câu hỏi của bạn...'
-                  className='flex-1 rounded-full border border-gray-300 px-4 py-2.5 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 focus:outline-none'
-                />
-                <button className='rounded-full bg-gradient-to-r from-green-600 to-green-500 p-2.5 text-white transition-all hover:shadow-md'>
-                  <Send className='h-5 w-5' />
-                </button>
+                <div className='flex w-full items-center gap-2'>
+                  <input
+                    type='text'
+                    placeholder='Nhập câu hỏi của bạn...'
+                    className='flex-1 rounded-full border border-gray-300 px-4 py-2.5 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 focus:outline-none'
+                  />
+                  <button className='rounded-full bg-gradient-to-r from-green-600 to-green-500 p-2.5 text-white transition-all hover:shadow-md'>
+                    <Send className='h-5 w-5' />
+                  </button>
+                </div>
               </div>
               <div className='mt-2 text-center text-xs text-gray-500'>Trợ lý Đom Đóm sẽ trả lời dựa trên dữ liệu nông nghiệp Việt Nam</div>
             </div>

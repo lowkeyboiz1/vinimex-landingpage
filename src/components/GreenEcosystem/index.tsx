@@ -81,8 +81,8 @@ export default function GreenEcosystem() {
   ]
 
   return (
-    <section className='flex min-h-dvh items-center justify-center bg-gradient-to-b from-white to-green-50 px-4 py-16 md:py-24'>
-      <div className='container mx-auto'>
+    <section id='green-ecosystem' className='flex min-h-dvh items-center justify-center bg-gradient-to-b from-white to-green-50 px-4 py-16 md:py-24'>
+      <div className='container mx-auto px-4'>
         {/* Feature Label */}
         <div className='mb-6 text-center'>
           <TitleBadge title='Tính năng 4' className='bg-[#D2E4D1] text-green-800' />

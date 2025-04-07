@@ -97,8 +97,8 @@ export default function SmartDashboard() {
   ]
 
   return (
-    <section className='bg-gradient-to-b from-white to-gray-50 py-12 md:py-20'>
-      <div className='container mx-auto'>
+    <section id='smart-dashboard' className='bg-gradient-to-b from-white to-gray-50 py-12 md:py-20'>
+      <div className='container mx-auto px-4'>
         {/* Feature Label */}
         <div className='mb-6 text-center'>
           <TitleBadge title='Tính năng 3' className='bg-green-100 text-green-800' />

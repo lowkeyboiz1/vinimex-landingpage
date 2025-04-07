@@ -1,5 +1,5 @@
 'use client'
-import { Search, Globe, Shield, FileCheck, CreditCard, QrCode, MapPin, Clock, FileText, Truck } from 'lucide-react'
+import { Search, Globe, Shield, FileCheck, CreditCard, QrCode, MapPin, Clock, FileText, Truck, Store } from 'lucide-react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { motion } from 'framer-motion'
 import TitleBadge from '../TitleBadge'
@@ -57,8 +57,8 @@ export default function DigitalMarket() {
   ]
 
   return (
-    <section className='bg-[#E2F0FB] py-12 md:py-20'>
-      <div className='container mx-auto'>
+    <section id='digital-market' className='bg-[#E2F0FB] py-12 md:py-20'>
+      <div className='container mx-auto px-4'>
         {/* Feature Label */}
 
         <div className='grid grid-cols-1 gap-8 lg:grid-cols-2'>
@@ -102,8 +102,8 @@ export default function DigitalMarket() {
             {/* Header */}
             <div className='flex items-center justify-between bg-[#002b54] p-4 text-white'>
               <div className='flex items-center gap-2'>
-                <div className='rounded bg-white p-1'>
-                  <div className='h-5 w-5 bg-[#002b54]'></div>
+                <div className='h-5 w-5'>
+                  <Store className='h-full w-full' />
                 </div>
                 <span className='font-semibold'>Chợ Nông Sản Số</span>
               </div>
@@ -131,7 +131,7 @@ export default function DigitalMarket() {
                   <TabsContent value='featured' className='h-full'>
                     <motion.div initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -10 }} transition={{ duration: 0.3 }} className='h-full'>
                       {/* Products */}
-                      <div className='grid grid-cols-2 gap-4 p-4'>
+                      <div className='grid grid-cols-2 gap-4'>
                         {products.map((product, index) => (
                           <div key={index} className='overflow-hidden rounded-lg border border-gray-100 transition-all hover:shadow-md'>
                             <div className='relative'>

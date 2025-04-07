@@ -85,7 +85,7 @@ export default function RiskMap() {
   const tabOrder = useMemo(() => ['weather', 'pests', 'market', 'disaster'], [])
 
   return (
-    <section className='bg-gradient-to-b from-white to-gray-50 py-12 md:py-20'>
+    <section id='risk-map' className='bg-gradient-to-b from-white to-gray-50 py-12 md:py-20'>
       <div className='mx-auto max-w-6xl px-4 sm:px-6 lg:px-8'>
         {/* Feature Label */}
         <div className='mb-6 text-center'>

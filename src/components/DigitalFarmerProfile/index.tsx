@@ -5,8 +5,8 @@ import Image from 'next/image'
 
 const DigitalFarmerProfile = () => {
   return (
-    <section id='digital-profile' className='flex min-h-dvh items-center justify-center bg-gradient-to-b from-white to-green-50 py-16 md:py-24'>
-      <div className='container mx-auto'>
+    <section id='digital-farmer-profile' className='flex min-h-dvh items-center justify-center bg-gradient-to-b from-white to-green-50 py-16 md:py-24'>
+      <div className='container mx-auto px-4'>
         <div className='mb-10 text-center md:mb-16'>
           <TitleBadge title='Tính năng 2' className='bg-[#D2E4D1] text-[#4F7A3C]' />
           <h3 className='mb-5 text-3xl font-bold md:mb-6 md:text-4xl lg:text-5xl'>Hồ sơ Nông dân Số & Nhật ký Sản xuất</h3>
