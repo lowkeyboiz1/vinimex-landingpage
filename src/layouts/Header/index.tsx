@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import { Menu, X } from 'lucide-react'
+import { Menu, Phone, X } from 'lucide-react'
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -12,11 +12,10 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navItems = [
-    { href: '#about-us', label: 'Về chúng tôi' },
-    { href: '#features', label: 'Tính năng' },
-    { href: '#road-map', label: 'Lộ trình phát triển' },
-    { href: '#digital-market', label: 'Thị trường số' },
-    { href: '#risk-map', label: 'Bản đồ rủi ro' }
+    { href: '#about-us', label: 'Giải pháp' },
+    { href: '#features', label: 'Công nghệ' },
+    { href: '#road-map', label: 'Về chúng tôi' },
+    { href: '#digital-market', label: 'Cộng đồng' }
   ]
 
   useEffect(() => {
@@ -80,8 +79,9 @@ const Header = () => {
               {item.label}
             </a>
           ))}
-          <Button className='cursor-pointer !rounded-full bg-gradient-to-r from-green-500 to-emerald-600 px-6 py-2 text-base whitespace-nowrap text-white shadow-md transition-all duration-200 hover:scale-105 hover:from-green-600 hover:to-emerald-700 hover:shadow-lg'>
+          <Button className='flex cursor-pointer items-center gap-2 rounded-full bg-[#F4A300] py-4 text-base text-white has-[>svg]:px-6'>
             Liên hệ ngay
+            <Phone />
           </Button>
         </nav>
 
