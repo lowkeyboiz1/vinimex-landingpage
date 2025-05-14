@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { Menu, Phone, X } from 'lucide-react'
 import { navItems } from '@/lib/contants'
+import Link from 'next/link'
+
 const Header = () => {
   const [scrolled, setScrolled] = useState(false)
   const [visible, setVisible] = useState(true)
@@ -59,22 +61,25 @@ const Header = () => {
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
         scrolled ? 'bg-white/90 shadow-sm backdrop-blur-md' : 'bg-transparent'
       } ${visible ? 'translate-y-0' : '-translate-y-full'}`}
+      role='banner'
     >
       <div className='container mx-auto flex items-center justify-between px-4 py-2 lg:py-4'>
         <div className='w-[80px] transition-all duration-200 hover:scale-105'>
-          <Image src={`/logo-black.png`} alt='logo' width={100} height={100} className='size-full object-contain' />
+          <Link href='/' aria-label='Trang chủ Vinimex AI'>
+            <Image src={`/logo-black.png`} alt='Vinimex AI logo' width={100} height={100} className='size-full object-contain' priority />
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className={`hidden items-center space-x-2 text-black md:flex lg:space-x-4`}>
+        <nav className={`hidden items-center space-x-2 text-black md:flex lg:space-x-4`} aria-label='Menu chính'>
           {navItems.map((item, index) => (
-            <a key={index} href={item.href} className='rounded-md px-3 py-2 font-medium transition-all duration-200 hover:text-blue-600'>
+            <Link key={index} href={item.href} className='rounded-md px-3 py-2 font-medium transition-all duration-200 hover:text-blue-600' aria-label={item.label}>
               {item.label}
-            </a>
+            </Link>
           ))}
-          <Button className='flex cursor-pointer items-center gap-2 rounded-full bg-[#F4A300] py-4 text-base text-white has-[>svg]:px-6'>
+          <Button className='flex cursor-pointer items-center gap-2 rounded-full bg-[#F4A300] py-4 text-base text-white has-[>svg]:px-6' aria-label='Liên hệ ngay với Vinimex AI'>
             Liên hệ ngay
-            <Phone />
+            <Phone aria-hidden='true' />
           </Button>
         </nav>
 
@@ -82,9 +87,11 @@ const Header = () => {
         <button
           className={`p-2 md:hidden ${scrolled ? 'text-black' : 'text-white'} z-[60] rounded-full transition-all duration-200 hover:bg-white/10`}
           onClick={toggleMobileMenu}
-          aria-label='Toggle menu'
+          aria-label='Mở menu'
+          aria-expanded={mobileMenuOpen}
+          aria-controls='mobile-menu'
         >
-          {mobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
+          {mobileMenuOpen ? <X size={32} aria-hidden='true' /> : <Menu size={32} aria-hidden='true' />}
         </button>
       </div>
 
@@ -92,32 +99,40 @@ const Header = () => {
       <div
         className={`fixed inset-0 z-50 bg-black/50 backdrop-blur-sm transition-opacity duration-300 md:hidden ${mobileMenuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
         onClick={toggleMobileMenu}
+        aria-hidden='true'
       />
       <div
+        id='mobile-menu'
         className={`fixed top-0 right-0 bottom-0 z-[55] h-dvh w-[85%] bg-white shadow-xl transition-transform duration-300 ease-in-out md:hidden ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
+        role='dialog'
+        aria-modal='true'
+        aria-label='Menu điện thoại'
       >
         <div className='flex h-full flex-col p-6'>
           <div className='mb-8 flex justify-between'>
             <div className='w-[80px]'>
-              <Image src='/logo-black.png' alt='logo' width={100} height={100} className='size-full object-contain' />
+              <Link href='/' aria-label='Trang chủ Vinimex AI'>
+                <Image src='/logo-black.png' alt='Vinimex AI logo' width={100} height={100} className='size-full object-contain' />
+              </Link>
             </div>
           </div>
-          <nav className='flex flex-col space-y-4'>
+          <nav className='flex flex-col space-y-4' aria-label='Menu di động'>
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={index}
                 href={item.href}
                 className='rounded-md px-4 py-3 text-lg font-medium text-gray-800 transition-all duration-200 hover:bg-green-50 hover:pl-6 hover:text-green-600'
                 onClick={toggleMobileMenu}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <Button
               className='mt-6 w-full cursor-pointer !rounded-full bg-gradient-to-r from-green-500 to-emerald-600 px-6 py-3 text-base font-medium whitespace-nowrap text-white shadow-md hover:from-green-600 hover:to-emerald-700 hover:shadow-lg'
               onClick={toggleMobileMenu}
+              aria-label='Liên hệ ngay với Vinimex AI'
             >
               Liên hệ ngay
             </Button>
