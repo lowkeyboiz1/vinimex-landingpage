@@ -1,12 +1,9 @@
 import AboutUs from '@/components/AboutUs'
 import AIAssistant from '@/components/AIAssistant'
-import DigitalFarmerProfile from '@/components/DigitalFarmerProfile'
-import DigitalMarket from '@/components/DigitalMarket'
-import GreenEcosystem from '@/components/GreenEcosystem'
+import JoinCommunity from '@/components/JoinCommunity'
 import HeroSection from '@/components/HeroSection'
-import RiskMap from '@/components/RiskMap'
-import RoadMap from '@/components/RoadMap'
 import SmartDashboard from '@/components/SmartDashboard'
+import TroLyAI from '@/components/TroLyAI'
 
 export default function Home() {
   return (
@@ -14,12 +11,9 @@ export default function Home() {
       <HeroSection />
       <AboutUs />
       <AIAssistant />
-      <DigitalFarmerProfile />
+      <TroLyAI />
       <SmartDashboard />
-      <GreenEcosystem />
-      <RiskMap />
-      <DigitalMarket />
-      <RoadMap />
+      <JoinCommunity />
     </>
   )
 }

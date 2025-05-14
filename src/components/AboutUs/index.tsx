@@ -1,57 +1,66 @@
+import Title from '@/components/Title'
+import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
-import { Leaf, Lightbulb, Shield } from 'lucide-react'
-import TitleBadge from '@/components/TitleBadge'
 
 const AboutUs = () => {
+  const challenges = [
+    {
+      image: '/why1.png',
+      alt: 'Farmer struggling with information',
+      title: 'Thông tin khó tiếp cận',
+      description: 'Kiến thức canh tác thường bị phân tán, khó hiểu hoặc không cập nhật thường xuyên. Bà con gặp khó khi tìm thông tin chính xác, dễ hiểu để áp dụng vào thực tế.'
+    },
+    {
+      image: '/why2.png',
+      alt: 'Farmer with weather data issues',
+      title: 'Thiếu dữ liệu chính xác',
+      description: 'Thông tin thời tiết và giá nông sản không cập nhật theo từng vùng, gây khó khăn cho việc lên kế hoạch gieo trồng hay bán ra thị trường.'
+    },
+    {
+      image: '/why3.png',
+      alt: 'Farmer struggling with complex technology',
+      title: 'Công nghệ quá phức tạp',
+      description: 'Nhiều app nông nghiệp hiện tại quá khó dùng với người lớn tuổi, lại không hỗ trợ giọng nói tiếng Việt, làm bà con thấy nản.'
+    }
+  ]
+
   return (
-    <section id='about-us' className='flex min-h-dvh items-center justify-center bg-gray-50 py-12 md:py-16'>
-      <div className='container mx-auto px-4'>
-        <div className='mx-auto mb-10 px-4 text-center md:mb-16 md:px-20'>
-          <TitleBadge title='Về chúng tôi' />
-          <h2 className='mb-4 text-2xl font-bold md:mb-6 md:text-3xl lg:text-4xl'>Nền tảng AI nông nghiệp tiên phong tại Việt Nam</h2>
-          <p className='text-base text-gray-700 md:text-lg'>
-            Vinimex AI Platform là nền tảng thông minh ứng dụng trí tuệ nhân tạo (AI) tiên phong trong lĩnh vực nông nghiệp Việt Nam. Chúng tôi kết hợp công nghệ tiên tiến với hiểu biết sâu sắc về
-            nông nghiệp Việt Nam để mang đến giải pháp toàn diện, thúc đẩy chuyển đổi số và phát triển bền vững.
+    <div className='min-h-dvh bg-white'>
+      <div className='container mx-auto max-w-7xl px-4 py-8 sm:py-12 md:py-16'>
+        <div className='mb-8 flex flex-col items-center gap-2 text-center sm:mb-12 sm:gap-3 md:mb-16 md:gap-4'>
+          <Title title='Thách thức của nhà nông' />
+          <h1 className='mb-2 text-2xl font-bold text-[#333333] sm:text-3xl md:text-4xl lg:text-6xl'>Vì sao Vinimex AI ra đời?</h1>
+
+          <p className='max-w-3xl text-base text-[#333333] sm:text-lg'>
+            Trong thời đại số, bà con nông dân Việt Nam đang gặp nhiều khó khăn khi tiếp cận công nghệ vào sản xuất. Vinimex AI ra đời để giải quyết những vấn đề đó.
           </p>
         </div>
-        <div className='grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12'>
-          <div className='relative'>
-            <Image src='/about-us.jpg' alt='Vinimex AI trong thực tế' className='relative z-10 h-auto w-full rounded-xl object-cover shadow-xl' width={600} height={600} />
-          </div>
-          <div className='space-y-4 md:space-y-6'>
-            <div className='flex items-start gap-3 rounded-2xl p-3 shadow-md md:gap-4 md:p-4'>
-              <div className='rounded-lg bg-[#D2E4D1] p-2 text-[#6A994E] md:p-3'>
-                <Leaf className='size-5 md:size-6' />
+
+        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6'>
+          {challenges.map((challenge, index) => (
+            <div key={index} className='overflow-hidden rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-lg'>
+              <div className='relative aspect-[4/3] w-full'>
+                <Image
+                  src={challenge.image}
+                  alt={challenge.alt}
+                  fill
+                  sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
+                  className='overflow-hidden rounded-2xl object-cover'
+                  priority={index === 0}
+                />
               </div>
-              <div>
-                <h3 className='mb-1 text-lg font-semibold md:mb-2 md:text-xl'>Sứ mệnh của chúng tôi</h3>
-                <p className='text-sm text-gray-700 md:text-base'>
-                  Thúc đẩy chuyển đổi số ngành nông nghiệp Việt Nam, nâng cao năng suất và chất lượng sản xuất nông nghiệp thông qua công nghệ AI tiên tiến.
-                </p>
-              </div>
-            </div>
-            <div className='flex items-start gap-3 rounded-2xl p-3 shadow-md md:gap-4 md:p-4'>
-              <div className='rounded-lg bg-[#D2E4D1] p-2 text-[#6A994E] md:p-3'>
-                <Lightbulb className='size-5 md:size-6' />
-              </div>
-              <div>
-                <h3 className='mb-1 text-lg font-semibold md:mb-2 md:text-xl'>Tầm nhìn</h3>
-                <p className='text-sm text-gray-700 md:text-base'>Trở thành nền tảng AI nông nghiệp hàng đầu Đông Nam Á, góp phần đưa nông nghiệp Việt Nam lên tầm cao mới, bền vững và thịnh vượng.</p>
+              <div className='p-4 sm:p-6 md:p-8'>
+                <h3 className='mb-2 text-xl font-bold text-[#333333] sm:mb-3 sm:text-2xl md:mb-4'>{challenge.title}</h3>
+                <p className='mb-4 line-clamp-4 min-h-[80px] text-sm text-[#333333] sm:mb-5 sm:min-h-[90px] sm:text-base md:mb-6 md:min-h-[100px]'>{challenge.description}</p>
+                <a href='#' className='inline-flex items-center text-sm font-medium text-[#56c97c] transition-colors hover:text-[#45a164] sm:text-base'>
+                  Tìm hiểu thêm <ArrowRight className='ml-2 h-3 w-3 sm:h-4 sm:w-4' />
+                </a>
               </div>
             </div>
-            <div className='flex items-start gap-3 rounded-2xl p-3 shadow-md md:gap-4 md:p-4'>
-              <div className='rounded-lg bg-[#D2E4D1] p-2 text-[#6A994E] md:p-3'>
-                <Shield className='size-5 md:size-6' />
-              </div>
-              <div>
-                <h3 className='mb-1 text-lg font-semibold md:mb-2 md:text-xl'>Giá trị cốt lõi</h3>
-                <p className='text-sm text-gray-700 md:text-base'>Đổi mới sáng tạo, tôn trọng bản sắc văn hóa, phát triển bền vững và tạo giá trị thực cho cộng đồng nông nghiệp Việt Nam.</p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

@@ -2,45 +2,28 @@
 
 import React from 'react'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
+import { BellRing, Focus } from 'lucide-react'
+import Title from '@/components/Title'
+
 const HeroSection = () => {
   return (
-    <section className='relative flex h-dvh items-center overflow-hidden'>
-      <div
-        className='absolute inset-0 z-0 bg-cover bg-center'
-        style={{
-          backgroundImage: `url('/bg-main.png')`
-        }}
-      >
-        <div className='absolute inset-0 bg-gradient-to-r from-green-900/80 to-transparent'></div>
+    <section className='container mx-auto flex min-h-dvh flex-col-reverse items-center justify-center gap-8 px-4 pt-[100px] md:grid md:grid-cols-2 md:gap-12 lg:grid-cols-5'>
+      <div className='w-full text-center md:col-span-1 md:text-left lg:col-span-2'>
+        <div className='flex flex-col items-center gap-4 md:items-start'>
+          <Title title='Đang phát triển bản beta' />
+          <h1 className='text-4xl font-bold sm:text-5xl lg:text-6xl'>Vinimex AI</h1>
+          <p className='text-lg sm:text-xl lg:text-2xl'>Trợ lý nông nghiệp thông minh dành cho người Việt</p>
+        </div>
+
+        <Button className='mt-8 w-full rounded-full bg-[#F4A300] py-4 text-white md:mt-12 md:w-fit'>
+          <BellRing />
+          Đăng ký dùng thử khi chúng tôi ra mắt
+        </Button>
       </div>
 
-      <div className='relative z-10 container mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='max-w-xl text-white md:max-w-2xl lg:max-w-3xl'>
-          <h1 className='text-3xl leading-tight font-bold sm:text-4xl md:text-5xl lg:text-6xl'>
-            <span className='text-[#3C93CF]'>Vinimex AI</span> – Tương Lai của Nông Nghiệp Thông Minh
-          </h1>
-          <p className='mt-4 text-base opacity-90 sm:text-lg md:text-xl'>
-            Cách mạng hóa nông nghiệp với công nghệ AI tiên tiến và tích hợp blockchain cho các phương pháp canh tác bền vững, hiệu quả và minh bạch.
-          </p>
-          <Button className='mt-8 cursor-pointer !rounded-full bg-[#6A994E] px-6 py-4 text-base whitespace-nowrap text-white shadow-md transition-all duration-200 hover:scale-105 hover:bg-[#5A8B3E] hover:shadow-lg'>
-            Liên hệ ngay
-          </Button>
-          <div className='mt-8 flex flex-wrap items-center gap-4'>
-            <div className='flex -space-x-4 rtl:space-x-reverse'>
-              <div className='relative z-30 h-10 w-10 overflow-hidden rounded-full border-2 border-white sm:h-12 sm:w-12'>
-                <img src='https://randomuser.me/api/portraits/men/42.jpg' alt='Nhà nông 1' className='h-full w-full object-cover' />
-              </div>
-              <div className='relative z-20 h-10 w-10 overflow-hidden rounded-full border-2 border-white sm:h-12 sm:w-12'>
-                <img src='https://randomuser.me/api/portraits/women/65.jpg' alt='Nhà nông 2' className='h-full w-full object-cover' />
-              </div>
-              <div className='relative z-10 h-10 w-10 overflow-hidden rounded-full border-2 border-white sm:h-12 sm:w-12'>
-                <img src='https://randomuser.me/api/portraits/men/91.jpg' alt='Nhà nông 3' className='h-full w-full object-cover' />
-              </div>
-            </div>
-
-            <p className='text-base font-medium text-white sm:text-lg'>1,200+ nhà nông Việt Nam tin dùng</p>
-          </div>
-        </div>
+      <div className='w-full md:col-span-1 lg:col-span-3'>
+        <Image src='/hero.png' alt='hero-section' width={500} height={500} className='size-full object-cover' priority />
       </div>
     </section>
   )

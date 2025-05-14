@@ -4,19 +4,12 @@ import React, { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { Menu, Phone, X } from 'lucide-react'
-
+import { navItems } from '@/lib/contants'
 const Header = () => {
   const [scrolled, setScrolled] = useState(false)
   const [visible, setVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-  const navItems = [
-    { href: '#about-us', label: 'Giải pháp' },
-    { href: '#features', label: 'Công nghệ' },
-    { href: '#road-map', label: 'Về chúng tôi' },
-    { href: '#digital-market', label: 'Cộng đồng' }
-  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,11 +62,11 @@ const Header = () => {
     >
       <div className='container mx-auto flex items-center justify-between px-4 py-2 lg:py-4'>
         <div className='w-[80px] transition-all duration-200 hover:scale-105'>
-          <Image src={`/logo-${scrolled || mobileMenuOpen ? 'black' : 'white'}.png`} alt='logo' width={100} height={100} className='size-full object-contain' />
+          <Image src={`/logo-black.png`} alt='logo' width={100} height={100} className='size-full object-contain' />
         </div>
 
         {/* Desktop Navigation */}
-        <nav className={`hidden items-center space-x-2 md:flex lg:space-x-4 ${scrolled ? 'text-black' : 'text-white'}`}>
+        <nav className={`hidden items-center space-x-2 text-black md:flex lg:space-x-4`}>
           {navItems.map((item, index) => (
             <a key={index} href={item.href} className='rounded-md px-3 py-2 font-medium transition-all duration-200 hover:text-blue-600'>
               {item.label}
