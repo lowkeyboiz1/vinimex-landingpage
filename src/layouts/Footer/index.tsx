@@ -47,21 +47,6 @@ const Footer = () => {
 
   return (
     <footer className='relative bg-green-900 px-4 py-12 text-white md:py-16' role='contentinfo'>
-      <div className='absolute top-0 left-1/2 container mx-auto grid w-full -translate-x-1/2 -translate-y-1/2 grid-cols-1 items-center justify-center gap-4 sm:grid-cols-2'>
-        <Button className='w-full cursor-pointer rounded-full bg-[#2EAF5D] py-4 text-sm text-white hover:bg-[#2EAF5D]/80 md:py-6 md:text-base' aria-label='Tham gia cộng đồng Zalo của Vinimex AI'>
-          <span>
-            <Image src='/zalo.png' alt='Zalo logo' width={20} height={20} className='size-4 md:size-5' />
-          </span>
-          Tham gia cộng động Zalo của Vinimex AI
-        </Button>
-        <Button className='w-full cursor-pointer rounded-full bg-[#F4A300] py-4 text-sm text-white hover:bg-[#F4A300]/80 md:py-6 md:text-base' aria-label='Đăng ký dùng thử Vinimex AI'>
-          <span>
-            <Bell className='size-4 flex-shrink-0 md:size-5' aria-hidden='true' />
-          </span>
-          Đăng ký dùng thử khi chúng tôi ra mắt
-        </Button>
-      </div>
-
       <div className='pointer-events-none absolute inset-0 overflow-hidden'>
         <div
           className='absolute bottom-0 left-0 hidden size-[300px] -translate-x-[30%] translate-y-[30%] opacity-30 md:size-[400px] lg:block lg:size-[500px]'
@@ -69,7 +54,6 @@ const Footer = () => {
           aria-hidden='true'
         />
       </div>
-
       <div className='relative z-10 container mx-auto mt-16 sm:mt-10 md:px-6'>
         <div className='grid gap-8 md:gap-12 lg:grid-cols-5'>
           <div className='lg:col-span-2'>
@@ -99,7 +83,7 @@ const Footer = () => {
           <div className='flex flex-col gap-6 md:gap-10 lg:col-span-3'>
             <div className='w-full'>
               <h2 className='text-lg font-bold text-white md:text-xl'>Nhận thông báo email</h2>
-              <form onSubmit={handleSubmit(onSubmit)} className='mt-4 flex flex-col items-center gap-3 bg-white sm:flex-row sm:gap-0 sm:overflow-hidden sm:rounded-full md:mt-6'>
+              <form onSubmit={handleSubmit(onSubmit)} className='mt-4 flex items-center gap-3 rounded-full bg-white sm:flex-row sm:gap-0 sm:overflow-hidden md:mt-6'>
                 <Input
                   type='email'
                   placeholder='Nhập email của bạn'
@@ -110,11 +94,11 @@ const Footer = () => {
                 <Button
                   type='submit'
                   variant='secondary'
-                  className='w-full cursor-pointer rounded-full border-0 bg-[#F4A300] p-3 text-sm text-white outline-0 sm:w-auto md:p-4 md:text-base'
+                  className='w-fit cursor-pointer rounded-full border-0 bg-[#F4A300] p-3 text-sm text-white outline-0 sm:w-auto md:p-4 md:text-base'
                   aria-label='Đăng ký nhận thông tin'
                 >
-                  Đăng ký nhận thông tin
-                  <Send className='ml-2 size-3 md:size-4' aria-hidden='true' />
+                  <span className='hidden md:block'>Đăng ký nhận thông tin</span>
+                  <Send className='size-3 md:ml-2 md:size-4' aria-hidden='true' />
                 </Button>
               </form>
             </div>

@@ -23,10 +23,10 @@ export default function SmartDashboard() {
 
   return (
     <section id='digital-farmer-profile' className='container mx-auto flex min-h-dvh flex-col gap-8 bg-white py-8 sm:gap-12 sm:py-16 md:py-24'>
-      <div className='mx-auto flex max-w-3xl flex-col items-center gap-2 px-4 sm:px-6'>
+      <div className='mx-auto flex max-w-4xl flex-col items-center gap-2 px-4 sm:px-6'>
         <Title title='Trợ lý AI' />
-        <p className='mt-2 text-center text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl'>Đom Đóm AI hiểu bà con, giỏi việc đồng áng</p>
-        <p className='text-center text-sm text-[#333333] sm:text-base'>
+        <p className='mt-2 text-center text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl'>Nền tảng AI nông nghiệp của người Việt, vì người Việt</p>
+        <p className='mt-4 text-center text-sm text-[#333333] sm:text-base'>
           Đom Đóm là trợ lý AI biết nói tiếng Việt, hiểu chuyện nhà nông và luôn sẵn sàng giúp đỡ bà con 24/7 – từ chẩn đoán bệnh cây, theo dõi mùa vụ đến dự báo thời tiết.
         </p>
       </div>

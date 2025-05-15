@@ -1,5 +1,5 @@
 import Title from '@/components/Title'
-import { Camera, Lightbulb, User, Users } from 'lucide-react'
+import { Bell, Camera, Lightbulb, User, Users } from 'lucide-react'
 import Image from 'next/image'
 import { memo } from 'react'
 import { Button } from '../ui/button'
@@ -26,8 +26,8 @@ const JoinCommunity = () => {
     }
   ]
   return (
-    <section id='digital-farmer-profile' className='relative mx-auto min-h-[150dvh] bg-white py-8 sm:py-12 md:py-24'>
-      <div className='container mx-auto flex flex-col gap-8 px-4 sm:gap-12'>
+    <section id='digital-farmer-profile' className='container mx-auto mb-20 bg-white py-8 sm:py-12 md:py-24'>
+      <div className='flex flex-col gap-8 px-4 sm:gap-12'>
         <div className='mx-auto flex max-w-3xl flex-col items-center gap-2'>
           <Title title='Tham gia cộng đồng' />
           <p className='mt-2 text-center text-3xl font-bold sm:text-4xl md:text-6xl'>Bạn có thể làm gì hôm nay?</p>
@@ -46,8 +46,19 @@ const JoinCommunity = () => {
           ))}
         </div>
       </div>
-      <div className='absolute right-0 bottom-0 left-0'>
-        <Image src='/joinComuniti.png' alt='Green Ecosystem' width={3000} height={3000} className='w-full' />
+      <div className='mt-12 grid gap-2 px-4 md:grid-cols-2 md:gap-5 lg:px-0'>
+        <Button className='w-full cursor-pointer rounded-full bg-[#2EAF5D] py-4 text-sm text-white hover:bg-[#2EAF5D]/80 md:text-base' aria-label='Tham gia cộng đồng Zalo của Vinimex AI'>
+          <span>
+            <Image src='/zalo.png' alt='Zalo logo' width={50} height={50} className='size-4 md:size-6' />
+          </span>
+          Tham gia cộng động Zalo của Vinimex AI
+        </Button>
+        <Button className='w-full cursor-pointer rounded-full bg-[#F4A300] py-4 text-sm text-white hover:bg-[#F4A300]/80 md:text-base' aria-label='Đăng ký dùng thử Vinimex AI'>
+          <span>
+            <Bell className='size-4 flex-shrink-0 md:size-5' aria-hidden='true' />
+          </span>
+          Đăng ký dùng thử khi chúng tôi ra mắt
+        </Button>
       </div>
     </section>
   )

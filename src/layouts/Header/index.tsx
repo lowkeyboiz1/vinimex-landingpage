@@ -3,9 +3,11 @@
 import React, { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import { Menu, Phone, X } from 'lucide-react'
+import { Phone } from 'lucide-react'
 import { navItems } from '@/lib/contants'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { cn } from '@/lib/utils'
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -52,10 +54,6 @@ const Header = () => {
     }
   }, [mobileMenuOpen])
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen)
-  }
-
   return (
     <header
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
@@ -83,66 +81,94 @@ const Header = () => {
           </Button>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          className={`p-2 md:hidden ${scrolled ? 'text-black' : 'text-white'} z-[60] rounded-full transition-all duration-200 hover:bg-white/10`}
-          onClick={toggleMobileMenu}
-          aria-label='Mở menu'
-          aria-expanded={mobileMenuOpen}
-          aria-controls='mobile-menu'
-        >
-          {mobileMenuOpen ? <X size={32} aria-hidden='true' /> : <Menu size={32} aria-hidden='true' />}
-        </button>
+        {/* Mobile Hamburger Menu */}
+        <div className='md:hidden'>
+          <Hamburger isActive={mobileMenuOpen} setIsActive={setMobileMenuOpen} />
+        </div>
       </div>
 
       {/* Mobile Navigation Drawer */}
       <div
-        className={`fixed inset-0 z-50 bg-black/50 backdrop-blur-sm transition-opacity duration-300 md:hidden ${mobileMenuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
-        onClick={toggleMobileMenu}
+        className={`fixed inset-0 z-50 transition-opacity duration-300 md:hidden ${mobileMenuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
+        onClick={() => setMobileMenuOpen(false)}
         aria-hidden='true'
       />
-      <div
+      <motion.div
         id='mobile-menu'
-        className={`fixed top-0 right-0 bottom-0 z-[55] h-dvh w-[85%] bg-white shadow-xl transition-transform duration-300 ease-in-out md:hidden ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className='fixed top-20 right-0 bottom-0 z-[55] h-dvh w-full bg-white shadow-xl md:hidden'
+        initial={{ x: '100%' }}
+        animate={{ x: mobileMenuOpen ? 0 : '100%' }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
         role='dialog'
         aria-modal='true'
         aria-label='Menu điện thoại'
       >
         <div className='flex h-full flex-col p-6'>
-          <div className='mb-8 flex justify-between'>
-            <div className='w-[80px]'>
-              <Link href='/' aria-label='Trang chủ Vinimex AI'>
-                <Image src='/logo-black.png' alt='Vinimex AI logo' width={100} height={100} className='size-full object-contain' />
-              </Link>
-            </div>
-          </div>
           <nav className='flex flex-col space-y-4' aria-label='Menu di động'>
             {navItems.map((item, index) => (
-              <Link
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: mobileMenuOpen ? 1 : 0, x: mobileMenuOpen ? 0 : 50 }}
+                transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
                 key={index}
-                href={item.href}
-                className='rounded-md px-4 py-3 text-lg font-medium text-gray-800 transition-all duration-200 hover:bg-green-50 hover:pl-6 hover:text-green-600'
-                onClick={toggleMobileMenu}
               >
-                {item.label}
-              </Link>
+                <Link
+                  href={item.href}
+                  className='block rounded-md px-4 py-3 text-lg font-medium text-gray-800 transition-all duration-200 hover:bg-green-50 hover:pl-6 hover:text-green-600'
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              </motion.div>
             ))}
-            <Button
-              className='mt-6 w-full cursor-pointer !rounded-full bg-gradient-to-r from-green-500 to-emerald-600 px-6 py-3 text-base font-medium whitespace-nowrap text-white shadow-md hover:from-green-600 hover:to-emerald-700 hover:shadow-lg'
-              onClick={toggleMobileMenu}
-              aria-label='Liên hệ ngay với Vinimex AI'
-            >
-              Liên hệ ngay
-            </Button>
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: mobileMenuOpen ? 1 : 0, y: mobileMenuOpen ? 0 : 20 }} transition={{ duration: 0.3, delay: 0.5 }}>
+              <Button
+                className='mt-6 w-full cursor-pointer !rounded-full bg-gradient-to-r from-green-500 to-emerald-600 px-6 py-3 text-base font-medium whitespace-nowrap text-white shadow-md hover:from-green-600 hover:to-emerald-700 hover:shadow-lg'
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label='Liên hệ ngay với Vinimex AI'
+              >
+                Liên hệ ngay
+              </Button>
+            </motion.div>
           </nav>
           <div className='mt-auto'>
             <p className='text-sm text-gray-500'>© 2024 Vinimex AI. All rights reserved.</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </header>
+  )
+}
+
+const Hamburger = ({ isActive, setIsActive }: { isActive: boolean; setIsActive: React.Dispatch<React.SetStateAction<boolean>> }) => {
+  return (
+    <motion.div className='relative z-[60] flex h-5 w-8 cursor-pointer flex-col justify-between hover:opacity-85' onClick={() => setIsActive((prev) => !prev)}>
+      {Array.from({ length: 3 }).map((_, index) => (
+        <motion.div
+          key={index}
+          className={cn('h-1 rounded-2xl bg-[#F4A300]')}
+          initial={false}
+          animate={
+            index === 1
+              ? {
+                  x: isActive ? '100%' : 0,
+                  opacity: isActive ? 0 : 1
+                }
+              : index === 0
+                ? {
+                    y: isActive ? '150%' : 0,
+                    rotate: isActive ? 45 : 0
+                  }
+                : {
+                    y: isActive ? '-250%' : '0%',
+                    rotate: isActive ? -45 : 0
+                  }
+          }
+          transition={{ duration: 0.3 }}
+          style={{ width: '100%' }}
+        />
+      ))}
+    </motion.div>
   )
 }
 

@@ -13,7 +13,7 @@ const HeroSection = () => {
         <div className='flex flex-col items-center gap-4 md:items-start'>
           <Title title='Đang phát triển bản beta' />
           <h1 className='text-4xl font-bold sm:text-5xl lg:text-6xl'>Vinimex AI</h1>
-          <p className='text-lg sm:text-xl lg:text-2xl'>Trợ lý nông nghiệp thông minh dành cho người Việt</p>
+          <p className='text-lg sm:text-xl lg:text-2xl'>Đom Đóm – trợ lý AI bằng tiếng Việt giúp bà con nông dân chăm sóc cây trồng, theo dõi giá sản vật và thời tiết địa phương dễ dàng hơn.</p>
         </div>
 
         <Button className='mt-8 w-full rounded-full bg-[#F4A300] py-4 text-white md:mt-12 md:w-fit' aria-label='Đăng ký dùng thử khi Vinimex AI ra mắt'>
@@ -23,7 +23,7 @@ const HeroSection = () => {
       </div>
 
       <div className='w-full md:col-span-1 lg:col-span-3'>
-        <Image src='/hero.png' alt='Vinimex AI - Trợ lý nông nghiệp thông minh dành cho nông dân Việt Nam' width={500} height={500} className='size-full object-cover' priority loading='eager' />
+        <Image src='/hero.png' alt='Vinimex AI - Trợ lý nông nghiệp thông minh dành cho nông dân Việt Nam' width={2000} height={2000} className='size-full object-cover' priority />
       </div>
     </section>
   )
