@@ -31,12 +31,12 @@ const JoinCommunity = () => {
         <div className='mx-auto flex max-w-3xl flex-col items-center gap-2'>
           <Title title='Tham gia cộng đồng' />
           <p className='mt-2 text-center text-3xl font-bold sm:text-4xl md:text-6xl'>Bạn có thể làm gì hôm nay?</p>
-          <p className='text-center text-sm text-[#333333] sm:text-base'>Cùng Vinimex AI xây dựng một cộng đồng nông dân Việt thông minh và đoàn kết hơn 💚</p>
+          <p className='mt-4 text-center text-sm text-[#333333] sm:text-base'>Cùng Vinimex AI xây dựng một cộng đồng nông dân Việt thông minh và đoàn kết hơn 💚</p>
         </div>
         <div className='grid grid-cols-1 items-stretch gap-4 lg:grid-cols-3'>
           {communitys.map((item, index) => (
             <div key={index} className='z-10 flex h-full flex-col gap-4 rounded-lg bg-[#D2E4D1]/50 p-4 pb-8 backdrop-blur-sm sm:gap-6 sm:p-6 sm:pb-12'>
-              <div className='flex size-8 flex-shrink-0 items-center justify-center rounded-full bg-[#DCFCE7] sm:size-10'>{item.icon}</div>
+              <div className='mx-auto flex size-8 flex-shrink-0 items-center justify-center rounded-full bg-[#DCFCE7] sm:size-10'>{item.icon}</div>
               <div className='flex flex-1 flex-col gap-1'>
                 <p className='text-lg font-bold sm:text-xl'>{item.title}</p>
                 <p className='text-sm text-[#333333] sm:text-base'>{item.description}</p>

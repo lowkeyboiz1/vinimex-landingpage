@@ -16,8 +16,8 @@ const HeroSection = () => {
           <p className='text-lg sm:text-xl lg:text-2xl'>Đom Đóm – trợ lý AI bằng tiếng Việt giúp bà con nông dân chăm sóc cây trồng, theo dõi giá sản vật và thời tiết địa phương dễ dàng hơn.</p>
         </div>
 
-        <Button className='mt-8 w-full rounded-full bg-[#F4A300] py-4 text-white md:mt-12 md:w-fit' aria-label='Đăng ký dùng thử khi Vinimex AI ra mắt'>
-          <BellRing aria-hidden='true' />
+        <Button className='mt-8 w-full cursor-pointer rounded-full bg-[#F4A300] py-4 text-base text-white hover:bg-[#F4A300]/80 md:mt-12 md:w-fit' aria-label='Đăng ký dùng thử khi Vinimex AI ra mắt'>
+          <BellRing aria-hidden='true' size={24} />
           <span>Đăng ký dùng thử khi chúng tôi ra mắt</span>
         </Button>
       </div>

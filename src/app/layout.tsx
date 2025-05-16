@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import { Be_Vietnam_Pro } from 'next/font/google'
 import './globals.css'
 import Header from '@/layouts/Header'
 import Footer from '@/layouts/Footer'
@@ -14,6 +15,13 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin']
+})
+
+const beVietnamPro = Be_Vietnam_Pro({
+  variable: '--font-be-vietnam-pro',
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  display: 'swap'
 })
 
 export const metadata: Metadata = {
@@ -87,7 +95,7 @@ export default function RootLayout({
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
         <link rel='icon' href='/favicon.ico' sizes='any' />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${beVietnamPro.variable} antialiased`}>
         <Header />
         <main>{children}</main>
         <Footer />

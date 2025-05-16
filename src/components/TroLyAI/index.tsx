@@ -23,21 +23,21 @@ const TroLyAI = () => {
       <div className='mx-auto flex max-w-3xl flex-col items-center gap-2 px-4 sm:px-6'>
         <Title title='Trợ lý AI' />
         <p className='mt-2 text-center text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl'>Đom Đóm AI hiểu bà con, giỏi việc đồng áng</p>
-        <p className='text-center text-sm text-[#333333] sm:text-base'>
+        <p className='mt-4 text-center text-sm text-[#333333] sm:text-base'>
           Đom Đóm là trợ lý AI biết nói tiếng Việt, hiểu chuyện nhà nông và luôn sẵn sàng giúp đỡ bà con 24/7 – từ chẩn đoán bệnh cây, theo dõi mùa vụ đến dự báo thời tiết.
         </p>
       </div>
       <div className='flex flex-col-reverse gap-6 px-4 sm:px-6 md:grid md:grid-cols-2 md:items-center md:gap-4'>
         <div className='flex flex-col gap-4'>
           {AIs.map((AI, index) => (
-            <div key={index} className='flex gap-2 rounded-2xl bg-[#DFF5E1] p-4 sm:p-6'>
+            <div key={index} className='flex gap-4 rounded-2xl bg-[#DFF5E1] p-4 sm:p-6'>
               <div>
                 <CircleCheck size={24} color='#56C97C' />
               </div>
 
               <div className='flex flex-col'>
                 <h3 className='text-lg font-bold sm:text-xl'>{AI.title}</h3>
-                <p className='text-sm text-[#333333] sm:text-base'>{AI.description}</p>
+                <p className='text-sm font-medium text-[#333333] sm:text-base'>{AI.description}</p>
               </div>
             </div>
           ))}

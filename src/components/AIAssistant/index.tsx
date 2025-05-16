@@ -13,7 +13,7 @@ const TitleButton = ({ title = '', icon, className }: { title: string; icon: Rea
 }
 
 const DescriptionItem = ({ description, color }: { description: string; color: string }) => {
-  return <div className={`flex items-center gap-2 rounded-2xl p-3 text-sm sm:p-4 sm:text-base ${color} text-[#333333]`}>{description}</div>
+  return <div className={`flex items-center gap-2 rounded-2xl p-3 text-sm sm:p-4 sm:text-base ${color} !text-[#333333]`}>{description}</div>
 }
 
 export default function AIAssistant() {

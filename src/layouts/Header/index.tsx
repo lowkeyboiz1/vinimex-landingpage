@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { Phone } from 'lucide-react'
@@ -14,9 +14,14 @@ const Header = () => {
   const [visible, setVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isHovering, setIsHovering] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
+      // Skip scroll handling when mobile menu is open
+      if (mobileMenuOpen) return
+
       const currentScrollY = window.scrollY
 
       // Determine if scrolled past threshold
@@ -39,12 +44,14 @@ const Header = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [scrolled, visible, lastScrollY])
+  }, [scrolled, visible, lastScrollY, mobileMenuOpen])
 
   useEffect(() => {
     // Prevent scrolling when mobile menu is open
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden'
+      // Ensure header is visible when mobile menu is open
+      setVisible(true)
     } else {
       document.body.style.overflow = ''
     }
@@ -54,28 +61,43 @@ const Header = () => {
     }
   }, [mobileMenuOpen])
 
+  useEffect(() => {
+    if (isHovering && videoRef.current) {
+      videoRef.current.play().catch((err) => console.error('Video play failed:', err))
+    } else if (videoRef.current) {
+      videoRef.current.pause()
+      videoRef.current.currentTime = 0
+    }
+  }, [isHovering])
+
   return (
     <header
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/90 shadow-sm backdrop-blur-md' : 'bg-transparent'
-      } ${visible ? 'translate-y-0' : '-translate-y-full'}`}
+        scrolled ? 'bg-white shadow-sm' : 'bg-transparent'
+      } ${visible || mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}
       role='banner'
     >
       <div className='container mx-auto flex items-center justify-between px-4 py-2 lg:py-4'>
-        <div className='w-[80px] transition-all duration-200 hover:scale-105'>
+        <div className='relative w-[80px] transition-all duration-200 hover:scale-105' onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
           <Link href='/' aria-label='Trang chủ Vinimex AI'>
-            <Image src={`/logo-black.png`} alt='Vinimex AI logo' width={100} height={100} className='size-full object-contain' priority />
+            {!isHovering && <Image src={`/logo-black.png`} alt='Vinimex AI logo' width={100} height={100} className='size-full object-contain' priority />}
+            {isHovering && (
+              <video ref={videoRef} className='size-full object-contain' muted playsInline loop>
+                <source src='/logo-animation.mp4' type='video/mp4' />
+                Your browser does not support the video tag.
+              </video>
+            )}
           </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className={`hidden items-center space-x-2 text-black md:flex lg:space-x-4`} aria-label='Menu chính'>
           {navItems.map((item, index) => (
-            <Link key={index} href={item.href} className='rounded-md px-3 py-2 font-medium transition-all duration-200 hover:text-blue-600' aria-label={item.label}>
+            <Link key={index} href={item.href} className='cursor-pointer rounded-md px-3 py-2 font-medium transition-all duration-200 hover:text-[#2EAF5D]' aria-label={item.label}>
               {item.label}
             </Link>
           ))}
-          <Button className='flex cursor-pointer items-center gap-2 rounded-full bg-[#F4A300] py-4 text-base text-white has-[>svg]:px-6' aria-label='Liên hệ ngay với Vinimex AI'>
+          <Button className='flex cursor-pointer items-center gap-2 rounded-full bg-[#F4A300] py-4 text-base text-white hover:bg-[#F4A300]/80 has-[>svg]:px-6' aria-label='Liên hệ ngay với Vinimex AI'>
             Liên hệ ngay
             <Phone aria-hidden='true' />
           </Button>
@@ -95,7 +117,7 @@ const Header = () => {
       />
       <motion.div
         id='mobile-menu'
-        className='fixed top-20 right-0 bottom-0 z-[55] h-dvh w-full bg-white shadow-xl md:hidden'
+        className='fixed top-16.5 right-0 bottom-0 z-[55] h-dvh w-full bg-white md:hidden'
         initial={{ x: '100%' }}
         animate={{ x: mobileMenuOpen ? 0 : '100%' }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
