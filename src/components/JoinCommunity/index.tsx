@@ -26,7 +26,7 @@ const JoinCommunity = () => {
     }
   ]
   return (
-    <section id='digital-farmer-profile' className='container mx-auto mb-20 bg-white py-8 sm:py-12 md:py-24'>
+    <section id='digital-farmer-profile' className='container mx-auto mb-20 max-w-[1240px] bg-white py-8 sm:py-12 md:py-24'>
       <div className='flex flex-col gap-8 px-4 sm:gap-12'>
         <div className='mx-auto flex max-w-3xl flex-col items-center gap-2'>
           <Title title='Tham gia cộng đồng' />

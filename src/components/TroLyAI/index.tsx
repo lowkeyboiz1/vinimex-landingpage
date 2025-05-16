@@ -19,7 +19,7 @@ const TroLyAI = () => {
     }
   ]
   return (
-    <section id='digital-farmer-profile' className='container mx-auto flex min-h-dvh flex-col gap-8 bg-white py-8 sm:gap-12 sm:py-16 md:py-24'>
+    <section id='digital-farmer-profile' className='container mx-auto flex min-h-dvh max-w-[1240px] flex-col gap-8 bg-white py-8 sm:gap-12 sm:py-16 md:py-24'>
       <div className='mx-auto flex max-w-3xl flex-col items-center gap-2 px-4 sm:px-6'>
         <Title title='Trợ lý AI' />
         <p className='mt-2 text-center text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl'>Đom Đóm AI hiểu bà con, giỏi việc đồng áng</p>

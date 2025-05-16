@@ -8,7 +8,7 @@ import Title from '@/components/Title'
 
 const HeroSection = () => {
   return (
-    <section id='hero' className='container mx-auto flex min-h-dvh flex-col-reverse items-center justify-center gap-8 px-4 pt-[100px] md:grid md:grid-cols-2 md:gap-12 lg:grid-cols-5'>
+    <section id='hero' className='container mx-auto flex min-h-dvh max-w-[1240px] flex-col-reverse items-center justify-center gap-8 px-4 pt-[100px] md:grid md:grid-cols-2 md:gap-12 lg:grid-cols-5'>
       <div className='w-full text-center md:col-span-1 md:text-left lg:col-span-2'>
         <div className='flex flex-col items-center gap-4 md:items-start'>
           <Title title='Đang phát triển bản beta' />

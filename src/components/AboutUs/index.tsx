@@ -28,7 +28,7 @@ const AboutUs = () => {
 
   return (
     <section id='about-us' className='min-h-dvh bg-white py-16'>
-      <div className='container mx-auto max-w-7xl px-4 py-8 sm:py-12 md:py-16'>
+      <div className='container mx-auto max-w-[1240px] px-4 py-8 sm:py-12 md:py-16'>
         <header className='mb-8 flex flex-col items-center gap-2 text-center sm:mb-12 sm:gap-3 md:mb-16 md:gap-4'>
           <Title title='Thách thức của nhà nông' />
           <h2 className='mb-2 text-2xl font-bold text-[#333333] sm:text-3xl md:text-4xl lg:text-6xl'>Vì sao Vinimex AI ra đời?</h2>

@@ -49,12 +49,12 @@ const Footer = () => {
     <footer className='relative bg-green-900 px-4 py-12 text-white md:py-16' role='contentinfo'>
       <div className='pointer-events-none absolute inset-0 overflow-hidden'>
         <div
-          className='absolute bottom-0 left-0 hidden size-[300px] -translate-x-[30%] translate-y-[30%] opacity-30 md:size-[400px] lg:block lg:size-[500px]'
+          className='absolute bottom-0 left-0 hidden size-[300px] -translate-x-[30%] translate-y-[30%] opacity-30 bg-blend-multiply md:size-[400px] lg:block lg:size-[500px]'
           style={{ backgroundImage: 'url(/trong-dong.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
           aria-hidden='true'
         />
       </div>
-      <div className='relative z-10 container mx-auto mt-16 sm:mt-10 md:px-6'>
+      <div className='relative z-10 container mx-auto mt-16 max-w-[1240px] sm:mt-10 md:px-6'>
         <div className='grid gap-8 md:gap-12 lg:grid-cols-5'>
           <div className='lg:col-span-2'>
             <div className='w-[50px] transition-transform hover:scale-105 md:w-[70px]'>

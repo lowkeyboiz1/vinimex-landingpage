@@ -77,7 +77,7 @@ const Header = () => {
       } ${visible || mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}
       role='banner'
     >
-      <div className='container mx-auto flex items-center justify-between px-4 py-2 lg:py-4'>
+      <div className='container mx-auto flex max-w-[1240px] items-center justify-between px-4 py-2 lg:py-4'>
         <div className='relative w-[80px] transition-all duration-200 hover:scale-105' onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
           <Link href='/' aria-label='Trang chủ Vinimex AI'>
             {!isHovering && <Image src={`/logo-black.png`} alt='Vinimex AI logo' width={100} height={100} className='size-full object-contain' priority />}

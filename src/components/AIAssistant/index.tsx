@@ -45,7 +45,10 @@ export default function AIAssistant() {
     }
   ]
   return (
-    <section id='ai-assistant' className='z-10 container mx-auto max-w-7xl px-4 py-8 sm:py-12 md:py-16'>
+    <section id='ai-assistant' className='relative z-10 container mx-auto max-w-[1240px] px-4 py-8 sm:py-12 md:py-16'>
+      <div className='absolute top-1/2 left-1/2 z-10 hidden h-4/5 w-4/5 -translate-x-1/2 -translate-y-1/2 lg:block'>
+        <Image src='/working.png' alt='Background image' fill className='scale-75 object-cover opacity-20' />
+      </div>
       <header className='mb-6 flex flex-col items-center gap-2 text-center sm:mb-8 sm:gap-3 md:mb-12 md:gap-4 lg:mb-16'>
         <Title title='Tính năng nổi bật' />
         <h2 className='z-30 mb-2 text-2xl font-bold text-[#333333] sm:text-3xl md:text-4xl lg:text-6xl'>
