@@ -13,7 +13,7 @@ const JoinCommunity = () => {
       text: '👉 Nhận hỗ trợ trực tiếp từ đội ngũ phát triển'
     },
     {
-      title: 'Góp ý để Vinimex tốt hơn',
+      title: 'Góp ý để Đom Đóm tốt hơn',
       description: 'Chia sẻ những khó khăn, mong muốn và đề xuất tính năng',
       icon: <Lightbulb className='text-[#16A34A]' size={24} />,
       text: '👉 Cùng nhau làm ra sản phẩm phù hợp với bà con mình'
@@ -31,7 +31,7 @@ const JoinCommunity = () => {
         <div className='mx-auto flex max-w-3xl flex-col items-center gap-2'>
           <Title title='Tham gia cộng đồng' />
           <p className='mt-2 text-center text-3xl font-bold sm:text-4xl md:text-6xl'>Bạn có thể làm gì hôm nay?</p>
-          <p className='mt-4 text-center text-sm text-[#333333] sm:text-base'>Cùng Vinimex AI xây dựng một cộng đồng nông dân Việt thông minh và đoàn kết hơn 💚</p>
+          <p className='mt-4 text-center text-sm text-[#333333] sm:text-base'>Cùng Đom Đóm AI xây dựng một cộng đồng nông dân Việt thông minh và đoàn kết hơn 💚</p>
         </div>
         <div className='grid grid-cols-1 items-stretch gap-4 lg:grid-cols-3'>
           {communitys.map((item, index) => (
@@ -47,13 +47,13 @@ const JoinCommunity = () => {
         </div>
       </div>
       <div className='mt-12 grid gap-2 px-4 md:grid-cols-2 md:gap-5 lg:px-0'>
-        <Button className='w-full cursor-pointer rounded-full bg-[#2EAF5D] py-4 text-sm text-white hover:bg-[#2EAF5D]/80 md:text-base' aria-label='Tham gia cộng đồng Zalo của Vinimex AI'>
+        <Button className='w-full cursor-pointer rounded-full bg-[#2EAF5D] py-4 text-sm text-white hover:bg-[#2EAF5D]/80 md:text-base' aria-label='Tham gia cộng đồng Zalo của Đom Đóm AI'>
           <span>
             <Image src='/zalo.png' alt='Zalo logo' width={50} height={50} className='size-4 md:size-6' />
           </span>
-          Tham gia cộng động Zalo của Vinimex AI
+          Tham gia cộng động Zalo của Đom Đóm AI
         </Button>
-        <Button className='w-full cursor-pointer rounded-full bg-[#F4A300] py-4 text-sm text-white hover:bg-[#F4A300]/80 md:text-base' aria-label='Đăng ký dùng thử Vinimex AI'>
+        <Button className='w-full cursor-pointer rounded-full bg-[#F4A300] py-4 text-sm text-white hover:bg-[#F4A300]/80 md:text-base' aria-label='Đăng ký dùng thử Đom Đóm AI'>
           <span>
             <Bell className='size-4 flex-shrink-0 md:size-5' aria-hidden='true' />
           </span>

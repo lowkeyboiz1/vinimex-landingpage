@@ -1,23 +1,23 @@
 export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Vinimex AI',
-  url: 'https://vinimexai.vn',
-  logo: 'https://vinimexai.vn/logo-black.png',
-  sameAs: ['https://facebook.com/vinimexai', 'https://zalo.me/vinimexai'],
+  name: 'Đom Đóm AI',
+  url: 'https://domdomai.vn',
+  logo: 'https://domdomai.vn/logo-black.png',
+  sameAs: ['https://facebook.com/domdomai', 'https://zalo.me/domdomai'],
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+84-1800-xxxx',
     contactType: 'customer service',
     availableLanguage: ['Vietnamese', 'English']
   },
-  description: 'Vinimex AI cung cấp các công cụ hiện đại giúp người nông dân tối ưu hóa quy trình sản xuất, giảm thiểu rủi ro và tăng giá trị sản phẩm.'
+  description: 'Đom Đóm AI cung cấp các công cụ hiện đại giúp người nông dân tối ưu hóa quy trình sản xuất, giảm thiểu rủi ro và tăng giá trị sản phẩm.'
 }
 
 export const productSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Vinimex AI',
+  name: 'Đom Đóm AI',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Android, iOS, Web',
   offers: {
@@ -41,19 +41,19 @@ export const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Trang chủ',
-      item: 'https://vinimexai.vn'
+      item: 'https://domdomai.vn'
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Tính năng',
-      item: 'https://vinimexai.vn/#features'
+      item: 'https://domdomai.vn/#features'
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Về chúng tôi',
-      item: 'https://vinimexai.vn/#about-us'
+      item: 'https://domdomai.vn/#about-us'
     }
   ]
 }
@@ -68,15 +68,15 @@ export const articleSchema = (title: string, description: string, image: string,
   dateModified: new Date().toISOString(),
   author: {
     '@type': 'Organization',
-    name: 'Vinimex AI',
-    url: 'https://vinimexai.vn'
+    name: 'Đom Đóm AI',
+    url: 'https://domdomai.vn'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'Vinimex AI',
+    name: 'Đom Đóm AI',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://vinimexai.vn/logo-black.png'
+      url: 'https://domdomai.vn/logo-black.png'
     }
   }
 })

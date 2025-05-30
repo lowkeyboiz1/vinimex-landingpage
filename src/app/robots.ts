@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/private/', '/admin/']
     },
-    sitemap: 'https://vinimexai.vn/sitemap.xml'
+    sitemap: 'https://domdomai.vn/sitemap.xml'
   }
 }

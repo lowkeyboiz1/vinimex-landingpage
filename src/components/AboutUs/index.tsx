@@ -31,10 +31,10 @@ const AboutUs = () => {
       <div className='container mx-auto max-w-[1240px] px-4 py-8 sm:py-12 md:py-16'>
         <header className='mb-8 flex flex-col items-center gap-2 text-center sm:mb-12 sm:gap-3 md:mb-16 md:gap-4'>
           <Title title='Thách thức của nhà nông' />
-          <h2 className='mb-2 text-2xl font-bold text-[#333333] sm:text-3xl md:text-4xl lg:text-6xl'>Vì sao Vinimex AI ra đời?</h2>
+          <h2 className='mb-2 text-2xl font-bold text-[#333333] sm:text-3xl md:text-4xl lg:text-6xl'>Vì sao Đom Đóm AI ra đời?</h2>
 
           <p className='max-w-3xl text-base text-[#333333] sm:text-lg'>
-            Trong thời đại số, bà con nông dân Việt Nam đang gặp nhiều khó khăn khi tiếp cận công nghệ vào sản xuất. Vinimex AI ra đời để giải quyết những vấn đề đó.
+            Trong thời đại số, bà con nông dân Việt Nam đang gặp nhiều khó khăn khi tiếp cận công nghệ vào sản xuất. Đom Đóm AI ra đời để giải quyết những vấn đề đó.
           </p>
         </header>
 

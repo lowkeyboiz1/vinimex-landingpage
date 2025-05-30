@@ -16,7 +16,7 @@ export default function SmartDashboard() {
     },
     {
       title: 'Giá trị cốt lõi',
-      description: ['Sáng tạo – Tận tâm – Bền vững.', 'Vinimex tôn trọng bản sắc, phát triển cùng cộng đồng và luôn tạo ra giá trị thật cho người Việt.'],
+      description: ['Sáng tạo – Tận tâm – Bền vững.', 'Đom Đóm tôn trọng bản sắc, phát triển cùng cộng đồng và luôn tạo ra giá trị thật cho người Việt.'],
       icon: <Heart className='text-[#16A34A]' size={24} />
     }
   ]

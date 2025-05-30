@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://vinimexai.vn'
+  const baseUrl = 'https://domdomai.vn'
 
   const routes = ['', '/about', '/features', '/contact'].map((route) => ({
     url: `${baseUrl}${route}`,

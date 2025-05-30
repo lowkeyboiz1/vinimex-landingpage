@@ -2,8 +2,8 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Vinimex AI - Trợ lý nông nghiệp thông minh',
-    short_name: 'Vinimex AI',
+    name: 'Đom Đóm AI - Trợ lý nông nghiệp thông minh',
+    short_name: 'Đom Đóm AI',
     description: 'Công nghệ AI tiên tiến cho nông nghiệp Việt Nam.',
     start_url: '/',
     display: 'standalone',
@@ -35,12 +35,12 @@ export default function manifest(): MetadataRoute.Manifest {
     related_applications: [
       {
         platform: 'play',
-        url: 'https://play.google.com/store/apps/details?id=vn.vinimexai.app',
-        id: 'vn.vinimexai.app'
+        url: 'https://play.google.com/store/apps/details?id=vn.domdomai.app',
+        id: 'vn.domdomai.app'
       },
       {
         platform: 'itunes',
-        url: 'https://apps.apple.com/app/vinimexai/id123456789'
+        url: 'https://apps.apple.com/app/domdomai/id123456789'
       }
     ],
     screenshots: [

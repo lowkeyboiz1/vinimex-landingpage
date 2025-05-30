@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { Toaster } from 'sonner'
+
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Be_Vietnam_Pro } from 'next/font/google'
 import './globals.css'
@@ -25,42 +27,42 @@ const beVietnamPro = Be_Vietnam_Pro({
 })
 
 export const metadata: Metadata = {
-  title: 'Vinimex AI | Giải pháp nông nghiệp thông minh',
+  title: 'Đom Đóm AI | Giải pháp nông nghiệp thông minh',
   description:
-    'Vinimex AI cung cấp các công cụ hiện đại giúp người nông dân tối ưu hóa quy trình sản xuất, giảm thiểu rủi ro và tăng giá trị sản phẩm. Khám phá trợ lý AI của chúng tôi cho người nông dân Việt Nam.',
-  keywords: 'nông nghiệp thông minh, trợ lý AI, Đom Đóm, nông nghiệp Việt Nam, học máy nông nghiệp, vinimex, canh tác thông minh, nông nghiệp số, quản lý nông trại, công nghệ nông nghiệp',
-  authors: [{ name: 'Vinimex', url: 'https://vinimexai.vn' }],
-  creator: 'Vinimex',
-  publisher: 'Vinimex',
+    'Đom Đóm AI cung cấp các công cụ hiện đại giúp người nông dân tối ưu hóa quy trình sản xuất, giảm thiểu rủi ro và tăng giá trị sản phẩm. Khám phá trợ lý AI của chúng tôi cho người nông dân Việt Nam.',
+  keywords: 'nông nghiệp thông minh, trợ lý AI, Đom Đóm, nông nghiệp Việt Nam, học máy nông nghiệp, đom đóm AI, canh tác thông minh, nông nghiệp số, quản lý nông trại, công nghệ nông nghiệp',
+  authors: [{ name: 'Đom Đóm', url: 'https://domdomai.vn' }],
+  creator: 'Đom Đóm',
+  publisher: 'Đom Đóm',
   alternates: {
-    canonical: 'https://vinimexai.vn'
+    canonical: 'https://domdomai.vn'
   },
-  applicationName: 'Vinimex AI',
+  applicationName: 'Đom Đóm AI',
   category: 'Technology',
   viewport: 'width=device-width, initial-scale=1',
   openGraph: {
-    title: 'Vinimex AI | Giải pháp nông nghiệp thông minh',
+    title: 'Đom Đóm AI | Giải pháp nông nghiệp thông minh',
     description: 'Công nghệ AI tiên tiến cho nông nghiệp Việt Nam. Tối ưu hóa quy trình canh tác và tăng năng suất với trợ lý thông minh.',
     locale: 'vi_VN',
     type: 'website',
-    url: 'https://vinimexai.vn',
-    siteName: 'Vinimex AI',
+    url: 'https://domdomai.vn',
+    siteName: 'Đom Đóm AI',
     images: [
       {
-        url: 'https://vinimexai.vn/og-image.png',
+        url: 'https://domdomai.vn/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Vinimex AI - Trợ lý nông nghiệp thông minh'
+        alt: 'Đom Đóm AI - Trợ lý nông nghiệp thông minh'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vinimex AI | Giải pháp nông nghiệp thông minh',
+    title: 'Đom Đóm AI | Giải pháp nông nghiệp thông minh',
     description: 'Công nghệ AI tiên tiến cho nông nghiệp Việt Nam. Tối ưu hóa quy trình canh tác với trợ lý AI.',
-    site: '@vinimexai',
-    creator: '@vinimexai',
-    images: ['https://vinimexai.vn/twitter-image.png']
+    site: '@domdomai',
+    creator: '@domdomai',
+    images: ['https://domdomai.vn/twitter-image.png']
   },
   robots: {
     index: true,
@@ -78,7 +80,7 @@ export const metadata: Metadata = {
     yandex: 'verify-code',
     yahoo: 'verify-code',
     other: {
-      me: ['info@vinimexai.vn']
+      me: ['info@domdomai.vn']
     }
   }
 }
@@ -95,7 +97,9 @@ export default function RootLayout({
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
         <link rel='icon' href='/favicon.ico' sizes='any' />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${beVietnamPro.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${beVietnamPro.variable} antialiased`} suppressHydrationWarning>
+        <Toaster />
+
         <Header />
         <main>{children}</main>
         <Footer />

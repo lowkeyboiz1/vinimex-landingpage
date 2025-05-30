@@ -21,7 +21,7 @@ const Footer = () => {
   const contactInfo = [
     { icon: <MapPin className='mt-1 mr-3 !size-4 shrink-0 text-green-400 md:!size-5' aria-hidden='true' />, text: '123 Đường Nông Nghiệp, Quận 1, TP. Hồ Chí Minh' },
     { icon: <Phone className='mt-1 mr-3 size-4 text-green-400 md:size-5' aria-hidden='true' />, text: '1800 xxxx (Miễn phí)' },
-    { icon: <Mail className='mt-1 mr-3 size-4 text-green-400 md:size-5' aria-hidden='true' />, text: 'info@vinimexai.vn' }
+    { icon: <Mail className='mt-1 mr-3 size-4 text-green-400 md:size-5' aria-hidden='true' />, text: 'info@domdomai.vn' }
   ]
 
   const appDownloads = [
@@ -58,26 +58,26 @@ const Footer = () => {
         <div className='grid gap-8 md:gap-12 lg:grid-cols-5'>
           <div className='lg:col-span-2'>
             <div className='w-[50px] transition-transform hover:scale-105 md:w-[70px]'>
-              <Link href='/' aria-label='Trang chủ Vinimex AI'>
-                <Image src={`/logo-white.png`} alt='Vinimex AI logo' width={70} height={70} className='size-full object-contain' />
+              <Link href='/' aria-label='Trang chủ Đom Đóm AI'>
+                <Image src={`/logo-white.png`} alt='Đom Đóm AI logo' width={70} height={70} className='size-full object-contain' />
               </Link>
             </div>
             <p className='mt-4 text-xs text-gray-300 md:mt-6 md:text-sm lg:text-base'>Kết nối công nghệ AI với nông nghiệp Việt Nam, mang lại hiệu quả và phát triển bền vững.</p>
             <div className='mt-4 flex flex-col gap-3 md:mt-6 md:gap-4'>
               <h2 className='text-lg font-bold text-white md:text-xl'>Theo dõi chúng tôi</h2>
               <div className='flex items-center gap-3 md:gap-4'>
-                <Link href='https://zalo.me/vinimexai' target='_blank' rel='noopener noreferrer' aria-label='Zalo Vinimex AI'>
+                <Link href='https://zalo.me/domdomai' target='_blank' rel='noopener noreferrer' aria-label='Zalo Đom Đóm AI'>
                   <div className='size-8 md:size-10'>
                     <Image src='/zalo.png' alt='Zalo logo' width={100} height={100} className='size-full object-contain' />
                   </div>
                 </Link>
-                <Link href='https://facebook.com/vinimexai' target='_blank' rel='noopener noreferrer' aria-label='Facebook Vinimex AI'>
+                <Link href='https://facebook.com/domdomai' target='_blank' rel='noopener noreferrer' aria-label='Facebook Đom Đóm AI'>
                   <div className='size-8 md:size-10'>
                     <Image src='/fb.png' alt='Facebook logo' width={100} height={100} className='size-full object-contain' />
                   </div>
                 </Link>
               </div>
-              <p className='mt-1 text-xs text-[#8CE3A1] md:mt-2 md:text-sm'>© 2025 Vinimex AI</p>
+              <p className='mt-1 text-xs text-[#8CE3A1] md:mt-2 md:text-sm'>© 2025 Đom Đóm AI</p>
             </div>
           </div>
           <div className='flex flex-col gap-6 md:gap-10 lg:col-span-3'>
@@ -105,8 +105,8 @@ const Footer = () => {
             <div className='flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center sm:gap-4'>
               <div className='flex flex-col gap-2'>
                 <h2 className='text-lg font-bold text-white md:text-xl'>Email của chúng tôi</h2>
-                <a href='mailto:mkt@vinimex.tech' className='text-sm hover:text-green-300 md:text-base'>
-                  mkt@vinimex.tech
+                <a href='mailto:mkt@domdom.tech' className='text-sm hover:text-green-300 md:text-base'>
+                  mkt@domdom.tech
                 </a>
               </div>
             </div>
@@ -121,7 +121,7 @@ const Footer = () => {
         </div>
         <div className='mt-6 flex flex-col items-center justify-between border-t border-green-800 pt-4 md:mt-8 md:pt-6'>
           <p className='mx-auto mb-2 text-center text-[10px] text-gray-400 md:mb-4 md:text-xs'>
-            © {new Date().getFullYear()} Vinimex AI. Bản quyền thuộc về Công ty Cổ phần Công nghệ Nông nghiệp Vinimex.
+            © {new Date().getFullYear()} Đom Đóm AI. Bản quyền thuộc về Công ty Cổ phần Công nghệ Nông nghiệp Đom Đóm.
           </p>
         </div>
       </div>

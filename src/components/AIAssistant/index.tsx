@@ -27,7 +27,7 @@ export default function AIAssistant() {
     },
     {
       image: '/feature.png',
-      altText: 'Giao diện trợ lý AI Vinimex với các tính năng đã phát triển như chatbot tiếng Việt và nhận diện bệnh cây'
+      altText: 'Giao diện trợ lý AI Đom Đóm với các tính năng đã phát triển như chatbot tiếng Việt và nhận diện bệnh cây'
     },
     {
       icon: <Settings size={20} className='sm:size-6' color='#0C5CA3' />,
@@ -52,7 +52,7 @@ export default function AIAssistant() {
       <header className='mb-6 flex flex-col items-center gap-2 text-center sm:mb-8 sm:gap-3 md:mb-12 md:gap-4 lg:mb-16'>
         <Title title='Tính năng nổi bật' />
         <h2 className='z-30 mb-2 text-2xl font-bold text-[#333333] sm:text-3xl md:text-4xl lg:text-6xl'>
-          Vinimex AI <br className='md:hidden' /> đang xây dựng những gì?
+          Đom Đóm AI <br className='md:hidden' /> đang xây dựng những gì?
         </h2>
 
         <p className='z-30 max-w-3xl text-sm text-[#333333] sm:text-base md:text-lg'>

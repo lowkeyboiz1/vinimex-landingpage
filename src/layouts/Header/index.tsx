@@ -79,8 +79,8 @@ const Header = () => {
     >
       <div className='container mx-auto flex max-w-[1240px] items-center justify-between px-4 py-2 lg:py-4'>
         <div className='relative w-[80px] transition-all duration-200 hover:scale-105' onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
-          <Link href='/' aria-label='Trang chủ Vinimex AI'>
-            {!isHovering && <Image src={`/logo-black.png`} alt='Vinimex AI logo' width={100} height={100} className='size-full object-contain' priority />}
+          <Link href='/' aria-label='Trang chủ Đom Đóm AI'>
+            {!isHovering && <Image src={`/logo-black.png`} alt='Đom Đóm AI logo' width={100} height={100} className='size-full object-contain' priority />}
             {isHovering && (
               <video ref={videoRef} className='size-full object-contain' muted playsInline loop>
                 <source src='/logo-animation.mp4' type='video/mp4' />
@@ -97,7 +97,7 @@ const Header = () => {
               {item.label}
             </Link>
           ))}
-          <Button className='flex cursor-pointer items-center gap-2 rounded-full bg-[#F4A300] py-4 text-base text-white hover:bg-[#F4A300]/80 has-[>svg]:px-6' aria-label='Liên hệ ngay với Vinimex AI'>
+          <Button className='flex cursor-pointer items-center gap-2 rounded-full bg-[#F4A300] py-4 text-base text-white hover:bg-[#F4A300]/80 has-[>svg]:px-6' aria-label='Liên hệ ngay với Đom Đóm AI'>
             Liên hệ ngay
             <Phone aria-hidden='true' />
           </Button>
@@ -147,14 +147,14 @@ const Header = () => {
               <Button
                 className='mt-6 w-full cursor-pointer !rounded-full bg-gradient-to-r from-green-500 to-emerald-600 px-6 py-3 text-base font-medium whitespace-nowrap text-white shadow-md hover:from-green-600 hover:to-emerald-700 hover:shadow-lg'
                 onClick={() => setMobileMenuOpen(false)}
-                aria-label='Liên hệ ngay với Vinimex AI'
+                aria-label='Liên hệ ngay với Đom Đóm AI'
               >
                 Liên hệ ngay
               </Button>
             </motion.div>
           </nav>
           <div className='mt-auto'>
-            <p className='text-sm text-gray-500'>© 2024 Vinimex AI. All rights reserved.</p>
+            <p className='text-sm text-gray-500'>© 2024 Đom Đóm AI. All rights reserved.</p>
           </div>
         </div>
       </motion.div>
